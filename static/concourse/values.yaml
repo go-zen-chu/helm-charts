@@ -240,7 +240,7 @@ concourse:
       ## When true, namespaces are not deleted when the release is deleted.
       ## Irrelevant if the namespaces are not created by this chart.
       ##
-      keepNamespaces: true
+      keepNamespaces: false
 
       ## Path to Kubernetes config when running ATC outside Kubernetes.
       ##
@@ -597,7 +597,7 @@ concourse:
         github:
           ## List of whitelisted GitHub users
           ##
-          user:
+          user: go-zen-chu
 
           ## List of whitelisted GitHub orgs
           ##
@@ -1081,7 +1081,7 @@ concourse:
       ## Driver to use for managing volumes.
       ## Possible values: detect, naive, btrfs, and overlay.
       ##
-      driver: naive
+      driver: overlay
 
       ## Path to btrfs binary
       ##
@@ -1252,7 +1252,7 @@ web:
     ## For minikube, set this to ClusterIP, elsewhere use LoadBalancer or NodePort
     ## Ref: https://kubernetes.io/docs/user-guide/services/#publishing-services---service-types
     ##
-    type: ClusterIP
+    type: LoadBalancer
 
     ## When using `web.service.type: LoadBalancer`, sets the user-specified load balancer IP.
     ## Example: 172.217.1.174
@@ -1630,7 +1630,7 @@ secrets:
 
   ## List of `username:password` or `username:bcrypted_password` combinations for all your local concourse users.
   ##
-  localUsers: "test:test"
+  localUsers: "admin:h0lfMBtlWmFi54E5"
 
   ## The TLS certificate and private key for the web component to be able to terminate
   ## TLS connections.
